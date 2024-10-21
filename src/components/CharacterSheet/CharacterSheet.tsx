@@ -1,7 +1,7 @@
-import React from 'react';
-import './CharacterSheet.css'; 
+import React from "react";
+import "./CharacterSheet.css";
 
-const CharacterSheet = () => {
+const CharacterSheet: React.FC = () => {
   return (
     <div className="character-sheet">
       <header>
@@ -13,11 +13,18 @@ const CharacterSheet = () => {
           <input type="text" placeholder="Background" />
         </div>
       </header>
-      
+
       <div className="main-stats">
         <div className="stat-section">
           <h3>Ability Scores</h3>
-          {['Strength', 'Dexterity', 'Constitution', 'Intelligence', 'Wisdom', 'Charisma'].map(ability => (
+          {[
+            "Strength",
+            "Dexterity",
+            "Constitution",
+            "Intelligence",
+            "Wisdom",
+            "Charisma",
+          ].map((ability) => (
             <div key={ability} className="stat-item">
               <label>{ability}</label>
               <input type="number" placeholder="10" />
@@ -25,10 +32,17 @@ const CharacterSheet = () => {
             </div>
           ))}
         </div>
-        
+
         <div className="stat-section">
           <h3>Saving Throws</h3>
-          {['Strength', 'Dexterity', 'Constitution', 'Intelligence', 'Wisdom', 'Charisma'].map(save => (
+          {[
+            "Strength",
+            "Dexterity",
+            "Constitution",
+            "Intelligence",
+            "Wisdom",
+            "Charisma",
+          ].map((save) => (
             <div key={save} className="stat-item">
               <input type="checkbox" />
               <span>{save}</span>
@@ -36,10 +50,29 @@ const CharacterSheet = () => {
             </div>
           ))}
         </div>
-        
+
         <div className="stat-section">
           <h3>Skills</h3>
-          {['Acrobatics', 'Animal Handling', 'Arcana', 'Athletics', 'Deception', 'History', 'Insight', 'Intimidation', 'Investigation', 'Medicine', 'Nature', 'Perception', 'Performance', 'Persuasion', 'Religion', 'Sleight of Hand', 'Stealth', 'Survival'].map(skill => (
+          {[
+            "Acrobatics",
+            "Animal Handling",
+            "Arcana",
+            "Athletics",
+            "Deception",
+            "History",
+            "Insight",
+            "Intimidation",
+            "Investigation",
+            "Medicine",
+            "Nature",
+            "Perception",
+            "Performance",
+            "Persuasion",
+            "Religion",
+            "Sleight of Hand",
+            "Stealth",
+            "Survival",
+          ].map((skill) => (
             <div key={skill} className="stat-item">
               <input type="checkbox" />
               <span>{skill}</span>
@@ -48,7 +81,7 @@ const CharacterSheet = () => {
           ))}
         </div>
       </div>
-      
+
       <div className="combat-stats">
         <div className="combat-stat">
           <label>Armor Class</label>
@@ -67,12 +100,12 @@ const CharacterSheet = () => {
           <input type="number" placeholder="10" />
         </div>
       </div>
-      
+
       <div className="text-section">
         <h3>Features & Traits</h3>
         <textarea placeholder="List your features and traits here..."></textarea>
       </div>
-      
+
       <div className="text-section">
         <h3>Equipment</h3>
         <textarea placeholder="List your equipment here..."></textarea>
