@@ -9,10 +9,9 @@ services:
       - "3000:3000"
     volumes:
       - .:/app
-      - /app/node_modules
     environment:
       - NODE_ENV=development
-      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
     command: npm start
 
   storybook:
@@ -23,8 +22,39 @@ services:
       - "6006:6006"
     volumes:
       - .:/app
-      - /app/node_modules
     environment:
       - NODE_ENV=development
-      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
     command: npm run storybook
+
+
+# version: "3.8"
+
+# services:
+#   react-app:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     ports:
+#       - "3000:3000"
+#     volumes:
+#       - .:/app
+#       - /app/node_modules
+#     environment:
+#       - NODE_ENV=development
+#       - CHOKIDAR_USEPOLLING=true
+#     command: npm start
+
+#   storybook:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     ports:
+#       - "6006:6006"
+#     volumes:
+#       - .:/app
+#       - /app/node_modules
+#     environment:
+#       - NODE_ENV=development
+#       - CHOKIDAR_USEPOLLING=true
+#     command: npm run storybook
